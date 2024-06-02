@@ -41,7 +41,7 @@ def test_scatter_nd_add_11():
     op = Net()
     op.eval()
     # net, name, ver_list, delta=1e-6, rtol=1e-5
-    obj = APIOnnx(op, 'scatter_nd_add', [16])
+    obj = APIOnnx(op, 'scatter_nd_add', [11])
     obj.set_input_data(
         "input_data",
         paddle.to_tensor([[1, 1], [2, 2], [3, 3]]).astype('float32'),
@@ -65,6 +65,3 @@ def test_scatter_nd_add_12():
         paddle.to_tensor([[2], [1], [0]]).astype('int64'),
         paddle.to_tensor([[1, 1], [2, 2], [3, 3]]).astype('float32'))
     obj.run()
-
-if __name__ == "__main__":
-    test_scatter_nd_add_11()
